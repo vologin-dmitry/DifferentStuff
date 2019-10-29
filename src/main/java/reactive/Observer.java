@@ -22,6 +22,5 @@ public class Observer implements io.reactivex.Observer<String> {
     @Override
     public void onComplete() {
         System.out.print("______________________");
-        System.out.print("\n\n");
     }
 }
