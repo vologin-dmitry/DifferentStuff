@@ -1,8 +1,6 @@
 package reactive;
 
 import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
 import javafx.util.Pair;
 import java.io.IOException;
 import java.util.HashMap;

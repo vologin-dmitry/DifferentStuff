@@ -1,10 +1,6 @@
 package reactive;
 
 import io.reactivex.Observable;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.subjects.PublishSubject;
-import io.reactivex.subjects.Subject;
-
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.*;
