@@ -1,21 +1,19 @@
 package reactive;
 
-import io.reactivex.*;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
-
+import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.file.*;
-import java.sql.Time;
 import java.util.concurrent.TimeUnit;
 
 public class Program {
     public static void main(String[] args) throws IOException, InterruptedException {
-        Config config = new Config(".\\src\\main\\resources", "ReadableThing.txt");
+        Path path = Paths.get(".", "src" + File.separator + "main" + File.separator + "resources");
+        Config config = new Config(path, "ReadableThing.txt");
         First fst = new First("first", config);
-        fst.write();
-        TimeUnit.SECONDS.sleep(10);
-        fst.write();
+        for (int i = 0; i < 10; ++i)
+        {
+            fst.write();
+            TimeUnit.SECONDS.sleep(5);
+        }
     }
 }

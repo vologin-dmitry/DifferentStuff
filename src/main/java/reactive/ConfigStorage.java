@@ -1,33 +1,59 @@
 package reactive;
 
 import io.reactivex.Observable;
+
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class ConfigStorage {
     private List<String> config;
-    private Path directory;
     private Path file;
     private WatchService watchService;
     private WatchKey key;
 
-    public ConfigStorage(String path, String fileName) throws IOException
+    public ConfigStorage(Path path, String fileName) throws IOException
     {
-        this.directory = Paths.get(path);
-        this.file = Paths.get(this.directory + "\\" + fileName);
+        this.file = Paths.get(path + File.separator + fileName);
         watchService = FileSystems.getDefault().newWatchService();
-        directory.register(watchService, StandardWatchEventKinds.ENTRY_MODIFY);
+        path.register(watchService, StandardWatchEventKinds.ENTRY_MODIFY);
+        config = load();
     }
 
-    public Observable<String> watch() throws IOException, InterruptedException {
-        while ((key = watchService.take()) != null) {
-            for (WatchEvent<?> event : key.pollEvents()) {
-                return (Observable.fromIterable(giveMeListOfChanges(config, Files.readAllLines(file))));
-            }
-            key.reset();
-        }
-        return null;
+
+    public Observable<String> watch() {
+        return Observable.create(
+                subscriber->
+                {
+                    Thread thr = new Thread(() -> {
+                        try {
+                            List<String> updated;
+                            while ((key = watchService.take()) != null) {
+                                try {
+                                    updated = Files.readAllLines(file);
+                                }
+                                catch (NoSuchFileException e)
+                                {
+                                    TimeUnit.MILLISECONDS.sleep(10);
+                                    updated = Files.readAllLines(file);
+                                }
+                                for (String string : giveMeListOfChanges(config, updated))
+                                {
+                                    subscriber.onNext(string);
+                                }
+                                key.reset();
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            e.printStackTrace();
+                        }
+                    });
+                    thr.start();
+                }
+        );
     }
 
     public List<String> load() throws IOException {
@@ -35,13 +61,14 @@ public class ConfigStorage {
     }
 
     private List<String> giveMeListOfChanges(List<String> previous, List<String> updated){
-        List<String> changes = new LinkedList<String>();
-        for(int i = 0; i <updated.size(); ++i)
+        List<String> changes = new LinkedList<>();
+        for(String upd : updated)
         {
-            if(!previous.get(i).equals(updated.get(i))){
-                changes.add(updated.get(i));
+            if(!previous.contains(upd)){
+                changes.add(upd);
             }
         }
+        config = updated;
         return changes;
     }
 }

@@ -2,10 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e53fd68e-3f4b-4bf1-98d2-9bd0dbfc1c82" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/ReadableThing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/ReadableThing.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/reactive/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/reactive/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/reactive/ConfigStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/reactive/ConfigStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/reactive/First.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/reactive/First.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/reactive/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/reactive/Program.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/reactive/Reloadable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/reactive/Reloadable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ReadableThing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ReadableThing.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +47,9 @@
       </state>
     </system>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="untitled" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -47,6 +62,10 @@
   </component>
   <component name="ProjectId" id="1St4CTLeIzzCH0Jk8bdlD2kcLy4" />
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -99,7 +118,10 @@
       <workItem from="1572410126103" duration="517000" />
       <workItem from="1572918902658" duration="16280000" />
       <workItem from="1572939782705" duration="24891000" />
-      <workItem from="1573012897615" duration="22585000" />
+      <workItem from="1573012897615" duration="23561000" />
+      <workItem from="1573323962288" duration="589000" />
+      <workItem from="1573753564231" duration="165000" />
+      <workItem from="1573755847492" duration="25267000" />
     </task>
     <servers />
   </component>
@@ -139,8 +161,10 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Remote">
-        <watch expression="((ObservableFromArray)((ObservableConcatMap)((ObservableLastMaybe)test).source).source).array" custom="io.reactivex.internal.operators.observable.ObservableLastMaybe,io.reactivex.internal.operators.observable.ObservableConcatMap,io.reactivex.internal.operators.observable.ObservableFromArray" />
-        <watch expression="((ObservableFilter)cfg).predicate" custom="io.reactivex.internal.operators.observable.ObservableFilter" />
+        <watch expression="this" />
+        <watch expression="this" language="JAVA" />
+        <watch expression="this" language="JAVA" />
+        <watch expression="key" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
